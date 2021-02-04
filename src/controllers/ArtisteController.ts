@@ -68,35 +68,8 @@ class ArtisteController {
         }
     }
 
-    async create2(req: Request, res: Response) {
-        const { artiste, albums } = req.body
-
-        const trx = await knex.transaction()
-        try {
-            const rs = await trx('artistes').insert({ name: artiste })
-
-            const artisteId = rs[0]
-
-            const items = await Promise.all(
-                albums.map(async (item: { name: string; year: number }) => {
-                    return  { name: item.name, year: item.year, artiste_id: artisteId }
-                })
-            )
-
-            await trx('albums').insert(items)
-
-            trx.commit()
-
-            return res.send({ id: artisteId, name: artiste, albums: items })
-        } catch (error) {
-            console.log(error)
-            trx.rollback()
-            return res.status(400).send({ error: 'Erro ao registrar o usuário' })
-        }
-    }
-
     async update(req: Request, res: Response) {
-        return res.send({ ok: 'ok' })
+        return res.send({ result: 'Não implementado' })
     }
 }
 
