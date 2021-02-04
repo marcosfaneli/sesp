@@ -31,7 +31,7 @@ class AuthController {
 
     async authenticate(req: Request, res: Response) {
         const { email, password } = req.body
-
+        
         try{
             const rs = await knex('users').where('email', email)
             
@@ -50,7 +50,7 @@ class AuthController {
             return res.send({id, name, token})
         }catch(error){
             console.log(error)
-            return res.status(400).send({error: 'Erro ao registrar o usuário'})
+            return res.status(400).send({error: 'Erro ao autenticar o usuário'})
         }
     }
 }

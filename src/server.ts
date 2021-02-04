@@ -1,8 +1,11 @@
 import express from 'express'
 import cors from 'cors'
 import { errors } from "celebrate"
+import { attachPaginate } from "knex-paginate"
 
 import routes from './routes'
+
+attachPaginate()
 
 const app = express()
 

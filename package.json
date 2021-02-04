@@ -15,9 +15,12 @@
     "bcryptjs": "^2.4.3",
     "celebrate": "^12.1.1",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.16",
+    "knex-paginate": "^1.2.3",
+    "multer": "^1.4.2",
     "sqlite3": "^5.0.1"
   },
   "devDependencies": {
@@ -27,6 +30,6 @@
     "@types/multer": "^1.4.3",
     "ts-node": "^8.10.2",
     "ts-node-dev": "^1.1.1",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.7"
   }
 }
