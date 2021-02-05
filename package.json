@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.12.13",
     "@types/cors": "^2.8.6",
     "bcryptjs": "^2.4.3",
     "celebrate": "^12.1.1",
@@ -20,13 +21,16 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.16",
     "knex-paginate": "^1.2.3",
+    "minio": "^7.0.18",
     "multer": "^1.4.2",
+    "multer-minio-storage": "0.0.8",
     "sqlite3": "^5.0.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.6",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/minio": "^7.0.7",
     "@types/multer": "^1.4.3",
     "ts-node": "^8.10.2",
     "ts-node-dev": "^1.1.1",
