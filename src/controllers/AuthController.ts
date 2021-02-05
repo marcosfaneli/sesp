@@ -5,7 +5,9 @@ import * as bcrypt from "bcryptjs"
 
 class AuthController {
     async register(req: Request, res: Response) {
-        const { name, email, password } = req.body
+        let { name, email, password } = req.body
+
+        email = email.toString().toLowerCase().trim()
 
         if ((await knex('users').where('email', email)).length > 0){
             return res.status(400).send({ error: 'Usuário já existe'})

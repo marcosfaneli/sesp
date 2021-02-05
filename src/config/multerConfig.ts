@@ -3,12 +3,15 @@ import multer from "multer"
 import * as crypto from "crypto"
 import multerMinioStorage from "multer-minio-storage"
 import * as Minio from "minio"
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const minioClient = new Minio.Client({
-  endPoint: 'play.minio.io',
-  port: 9000,
-  accessKey: 'Q3AM3UQ867SPQQA43P2F',
-  secretKey: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG'
+  endPoint: process.env.STORAGE_HOST || '',
+  port: Number(process.env.STORAGE_PORT) || 0,
+  accessKey: process.env.STORAGE_ACCESS_KEY || '',
+  secretKey: process.env.STORAGE_SECRET_KEY || ''
 })
 
 const storage = multerMinioStorage({

@@ -20,7 +20,8 @@ routes.use(authToken.validateToken)
 
 routes.get('/artistes', artisteController.page)
 routes.post('/artistes', artisteController.create)
-routes.put('/artistes', artisteController.update)
+routes.put('/artistes/:id', artisteController.update)
+routes.delete('/artistes/:id', artisteController.delete)
 
 routes.post('/upload', multerConfig.single('file'),uploadController.upload)
 

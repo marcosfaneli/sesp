@@ -1,9 +1,7 @@
 import { Request, Response, Errback } from "express"
 
 class UploadController {
-    async upload (req: Request, res: Response, err: Errback){
-        console.log(err)
-
+    async upload (req: Request, res: Response){
         try {
             const { originalname: name, size, filename: key } = req.file
             return res.send({ name })
