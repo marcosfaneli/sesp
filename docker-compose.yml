@@ -1,0 +1,19 @@
+version: "3.7"
+ 
+services: 
+
+  node-ts:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: sesp-server
+    volumes:
+      - ./data:/src/
+    ports:
+      - "5000:5000"
+
+volumes:
+    postgres:   
+    pgadmin:
+                
