@@ -1,4 +1,5 @@
-# sesp
+# Seletivo PJC/MT 2020
+e-mail: marcosfaneli@gmail.com
 
 # Passos iniciais para executar o projeto
 
